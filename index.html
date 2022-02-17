@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="/js/app.js" defer></script>
+    <title>Tip calculator app</title>
+</head>
+<body>
+
+    <header class="header">
+        <img class="header__logo" src="/images/logo.svg" alt="">
+    </header>
+
+    <main class="calculator">
+
+        <form class="calculator__form" action="#" id="form">
+            <label class="calculator__label" for="bill">Bill</label><br>
+            <input class="calculator__img" disabled type="image" src="/images/icon-dollar.svg" name="dollar" id="dollar" alt="$">
+            <input class="calculator__input calculator__input--bill" type="number" name="bill" id="bill" placeholder="0" min="0">
+
+            <fieldset class="calculator__tip">
+                <legend class="calculator__title"> Select Tip % </legend>
+                
+                <input class="calculator__percent" type="button" value="5%" id="tip1" data-percent="5">
+                <input class="calculator__percent" type="button" value="10%" id="tip1" data-percent="10">
+                <input class="calculator__percent" type="button" value="15%" id="tip3" data-percent="15">
+                <input class="calculator__percent" type="button" value="25%" id="tip4" data-percent="25">
+                <input class="calculator__percent" type="button" value="50%" id="tip5" data-percent="50">
+                <input class="calculator__percent calculator__percent--custom" id="tip" type="number" placeholder="Custom">
+            </fieldset>
+
+            <label class="calculator__label" for="people">Number of People</label><br>
+            <input class="calculator__img" disabled type="image" src="/images/icon-person.svg" name="person" id="person" alt="person">
+            <input class="calculator__input calculator__input--people" type="number" name="people" id="people" placeholder="0" min="0" max="100">
+        </form>
+
+        <section class="calculator__results">
+
+            <article class="calculator__display">
+                <h4 class="calculator__title-secondary">Tip Amount <br><small class="calculator__small">/ person</small></h4>
+                <p class="calculator__result" id="tipAmount">$0.00</p>
+            </article>
+
+            <article class="calculator__display calculator__display--total">
+                <h4 class="calculator__title-secondary">Total <br><small class="calculator__small">/ person</small></h4>
+                <p class="calculator__result" id="total">$0.00</p>
+            </article>
+
+            <button class="calculator__button" id="reset">Reset</button>
+            
+        </section>
+
+    </main>
+    
+    
+</body>
+</html>

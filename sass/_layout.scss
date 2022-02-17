@@ -1,0 +1,342 @@
+@use "base" as *;
+@use "abstract" as *;
+
+body
+{
+    background-color: $light-grayish-cyan-1;
+    font-family: $font-primary;
+}
+
+.header
+{
+    text-align: center;
+    margin: 3em;
+}
+
+.calculator
+{
+    background-color: $white;
+    max-width: 100%;
+    height: 120vh;
+    border-radius: 20px;
+    padding-top: 1em;
+    padding-right: .5em;
+
+    @include responsive(tablet)
+    {
+        width: 90%;
+        margin: auto;
+    }
+
+    @include responsive(portatil)
+    {
+        width: 62%;
+        height: 55vh;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        box-shadow: 0 7px 20px rgba($color: $dark-grayish-cyan-2, $alpha: .4);
+    }
+
+    &__form
+    {
+        padding: 1em;
+        position: relative;
+
+        @include responsive(portatil)
+        {
+            width: 100%;
+        }
+    }
+
+    &__label
+    {
+        color: $dark-grayish-cyan-1;
+        font-weight: map-get($weights, bold);
+        margin-left: 1.2em;
+
+        @include responsive(portatil)
+        {
+            font-size: 14px;
+        }
+    }
+
+    &__input
+    {
+        width: 85%; 
+        height: 7vh;
+        background-color: $light-grayish-cyan-2; 
+        font-size: $size-primary;
+        border: none; outline: none;
+        padding-right: 1em;
+        margin-top: .5em;
+        text-align: right;
+        color: $very-dark-cyan;
+        font-weight: map-get($weights, bold);
+        margin-left: .8em;
+        border-radius: 5px;
+        
+        &:focus
+        {
+            outline: 2px solid $strong-cyan;
+        }
+
+        @include responsive(tablet)
+        {
+            width: 92.5%;
+        }
+
+        @include responsive(portatil)
+        {
+            height: 5vh;
+            font-size: 20px;
+        }
+
+        &::placeholder
+        {
+            color: $dark-grayish-cyan-2;
+        }
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button
+        {
+            -webkit-appearance: none;
+             margin: 0;
+        }
+    }
+
+    &__img
+    {
+        position: absolute;
+        transform: translate(2.3em, 1.7em);
+
+        @include responsive(portatil)
+        {
+            width: 11px;
+            position: absolute;
+            transform: translate(2.3em, 1.3em);   
+        }
+    }
+
+    &__tip
+    {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        border: none;
+        margin: 2em 0 1em 0;
+
+        @include responsive(portatil)
+        {
+            width: 120%;
+        }
+    }
+
+    &__title
+    {
+        color: $dark-grayish-cyan-1;
+        font-weight: map-get($weights, bold);
+        margin-bottom: .5em;
+        transform: translate(.5em);
+
+        @include responsive(portatil)
+        {
+            font-size: 14px;
+        }
+    }
+
+    &__percent
+    {
+        width: 44%; 
+        height: 7vh;
+        border: none; outline: none;
+        margin: .5em;
+        font-size: $size-primary;
+        font-weight: map-get($weights, bold);
+        color: $white;
+        background-color: $very-dark-cyan;
+        border-radius: 5px;
+        margin: .3em;
+        text-align: center;
+        cursor: pointer;
+
+        @include responsive(movil-S)
+        {
+            width: 44%;
+        }
+
+        @include responsive(tablet)
+        {
+            width: 47%;
+        }
+
+        @include responsive(portatil)
+        {
+            width: 25%;
+            height: 10%;
+            font-size: 20px;
+            font-weight: map-get($weights, bold);
+            padding: .3em;
+        }
+
+        &:hover
+        {
+            background-color: $light-grayish-cyan-1;
+            color: $very-dark-cyan;
+        }
+
+        &--custom
+        {
+            width: 37%; 
+            text-align: right;
+            padding-right: 1em;
+            background-color: $light-grayish-cyan-2;
+            color: $very-dark-cyan;
+            font-weight: map-get($weights, bold);
+            cursor: pointer;
+
+            &:focus
+            {
+                outline: 2px solid $strong-cyan;
+                background-color: $light-grayish-cyan-2;
+            }
+
+            @include responsive(movil-S)
+            {
+                width: 34%;
+            }
+
+            @include responsive(tablet)
+            {
+                width: 44%;
+            }
+
+            @include responsive(portatil)
+            {
+                width: 19%;
+            }
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button
+        {
+                -webkit-appearance: none;
+                 margin: 0;
+        }
+        }
+    }
+
+    &__results
+    {
+        background-color: $very-dark-cyan;
+        margin: 1.5em 1.5em 1.5em 2em;
+        border-radius: 15px;
+        padding: 1em 1.5em;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        @include responsive(portatil)
+        {
+            margin-top: .5em;
+            width: 80%;
+            padding: 2em 1.8em;
+        }
+    }
+
+    &__display
+    {
+        display: flex;
+        justify-content: space-between;
+
+        &--total
+        {
+
+            @include responsive(portatil)
+            {
+               transform: translateY(-3em);
+            }
+        }
+    }
+
+    &__title-secondary
+    {
+        color: #fff;
+
+        @include responsive(portatil)
+        {
+            font-size: 14px;
+        }
+    }
+
+    &__small
+    {
+        color: $dark-grayish-cyan-2;
+    }
+
+    &__result
+    {
+        display: flex;
+        justify-content: flex-end;
+        font-size: $size-primary;
+        color: $strong-cyan;
+        font-weight: map-get($weights, bold);
+        // position: relative;
+
+        @include responsive(portatil)
+        {
+            font-size: 40px;
+            transform: translateY(-.8em);
+        }
+    }
+
+    &__button
+    {
+        display: block;
+        margin-top: .5em;
+        padding: .7em;
+        border:  none; outline: none;
+        border-radius: 5px;
+        color: $very-dark-cyan;
+        font-weight: map-get($weights, bold);
+        text-transform: uppercase;
+        background-color: $strong-cyan;
+        font-size: 19px;
+        cursor: pointer;
+        pointer-events: none;
+        opacity: .4;
+
+        @include responsive(portatil)
+        {
+            padding: .5em;
+            transform: translateY(-2em);
+        }
+
+        &:hover
+        {
+            background-color: $light-grayish-cyan-1;
+            color: $very-dark-cyan;
+        }
+    }
+
+}
+
+//JS
+
+.active
+{
+    background-color: $strong-cyan;
+    color: $very-dark-cyan;
+}
+
+.border
+{
+    outline: 2px solid tomato;
+}
+
+.reset-active
+{
+    pointer-events: all;
+    opacity: 1;
+}
+

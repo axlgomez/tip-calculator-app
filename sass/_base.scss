@@ -1,0 +1,32 @@
+//## Colors
+
+//### Primary
+
+$strong-cyan: hsl(172, 67%, 45%);
+
+//### Neutral
+
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan-1: hsl(186, 14%, 43%);
+$dark-grayish-cyan-2: hsl(184, 14%, 56%);
+$light-grayish-cyan-1: hsl(185, 41%, 84%);
+$light-grayish-cyan-2: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+
+
+//## Typography
+
+//### Body Copy
+
+$size-primary: 24px; // (form inputs)
+
+//### Font
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+$font-primary: 'Space Mono', monospace;
+
+$weights:(
+    "regular": 400,
+    "bold": 700
+);
